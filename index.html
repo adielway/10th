@@ -29,24 +29,17 @@ body{
     background:#fff5f7;
 }
 
-/* Background Images */
+/* MAIN BACKGROUND */
 
 body::before{
     content:"";
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    inset:0;
 
-    background:
-        linear-gradient(
-            rgba(255,255,255,0.80),
-            rgba(255,255,255,0.80)
-        ),
-        url('pic3.jpg'),
-        url('pic8.jpg'),
-        url('pic9.jpg');
+    background-image:
+        url('pic3(1).jpg'),
+        url('pic8(1).jpg'),
+        url('pic9(1).jpg');
 
     background-size:
         cover,
@@ -55,42 +48,45 @@ body::before{
 
     background-position:
         center,
-        top left,
-        bottom right;
+        top,
+        bottom;
 
     background-repeat:no-repeat;
 
     opacity:0.20;
 
-    z-index:-3;
+    z-index:-5;
 
-    animation:bgMove 20s ease-in-out infinite alternate;
+    animation:bgZoom 20s ease-in-out infinite alternate;
 }
 
-/* Smooth background movement */
-
-@keyframes bgMove{
-    0%{
-        transform:scale(1);
-    }
-    100%{
-        transform:scale(1.05);
-    }
-}
-
-/* Optional dark overlay for readability */
+/* PINK OVERLAY */
 
 body::after{
     content:"";
     position:fixed;
     inset:0;
-    background:linear-gradient(
+
+    background:
+    linear-gradient(
         135deg,
-        rgba(255,209,220,0.85),
-        rgba(255,228,236,0.85),
-        rgba(255,245,247,0.90)
+        rgba(255,209,220,0.82),
+        rgba(255,228,236,0.82),
+        rgba(255,245,247,0.88)
     );
-    z-index:-2;
+
+    z-index:-4;
+}
+
+/* SMOOTH BACKGROUND MOVEMENT */
+
+@keyframes bgZoom{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.05);
+    }
 }
 
 /* Animated Background Blur */
@@ -290,15 +286,15 @@ button:hover{
     height:40px;
 }
 
-/* Mobile Optimization */
+/* Mobile */
 
 @media(max-width:768px){
 
     body::before{
         background-position:
             center,
-            center top,
-            center bottom;
+            center,
+            center;
     }
 
 }
@@ -319,6 +315,14 @@ button:hover{
 </head>
 
 <body>
+
+<!-- Background Photos -->
+
+<div class="bg-image bg1"></div>
+<div class="bg-image bg2"></div>
+<div class="bg-image bg3"></div>
+
+<div class="overlay"></div>
 
 <!-- Background Blur -->
 <div class="bg-blur"></div>
