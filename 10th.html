@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Happy 10th Monthsary ❤️</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ffb6c1,#ffd6e7,#fff0f5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+/* Floating Hearts */
+.heart{
+    position:absolute;
+    bottom:-50px;
+    color:rgba(255,255,255,0.8);
+    animation:floatUp linear infinite;
+    font-size:20px;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Main Card */
+.card{
+    width:90%;
+    max-width:420px;
+    background:rgba(255,255,255,0.2);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.4);
+    border-radius:25px;
+    padding:30px 25px;
+    text-align:center;
+    box-shadow:0 10px 40px rgba(0,0,0,0.15);
+    animation:fadeIn 1.5s ease;
+    z-index:2;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h1{
+    color:#ff3f6c;
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#5e4b56;
+    font-size:0.95rem;
+    margin-bottom:20px;
+}
+
+/* GIF */
+.gif-container img{
+    width:220px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+    margin-bottom:20px;
+}
+
+/* Message */
+.message{
+    color:#4a3a43;
+    font-size:1rem;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+/* Button */
+button{
+    padding:12px 28px;
+    border:none;
+    border-radius:30px;
+    background:#ff4f81;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(255,79,129,0.4);
+}
+
+button:hover{
+    transform:scale(1.08);
+    background:#ff2e68;
+}
+
+/* Hidden Letter */
+.letter{
+    margin-top:20px;
+    display:none;
+    animation:fadeIn 1s ease;
+    color:#4d3d45;
+    font-size:0.95rem;
+    line-height:1.8;
+}
+
+/* Sparkles */
+.sparkle{
+    position:absolute;
+    width:6px;
+    height:6px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{
+        opacity:0.2;
+        transform:scale(1);
+    }
+    to{
+        opacity:1;
+        transform:scale(1.8);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating Hearts -->
+<script>
+for(let i=0;i<25;i++){
+    let heart=document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="❤";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(Math.random()*5+5)+"s";
+    heart.style.fontSize=(Math.random()*20+10)+"px";
+    document.body.appendChild(heart);
+}
+</script>
+
+<!-- Sparkles -->
+<script>
+for(let i=0;i<40;i++){
+    let sparkle=document.createElement("div");
+    sparkle.classList.add("sparkle");
+    sparkle.style.top=Math.random()*100+"vh";
+    sparkle.style.left=Math.random()*100+"vw";
+    sparkle.style.animationDuration=(Math.random()*3+1)+"s";
+    document.body.appendChild(sparkle);
+}
+</script>
+
+<!-- Main Card -->
+<div class="card">
+
+    <h1>Happy 10th Monthsary loveee❤️</h1>
+
+    <p class="subtitle">
+        10 months with you feels like my favorite love story.
+    </p>
+
+    <div class="gif-container">
+        <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="cute gif">
+    </div>
+
+    <div class="message">
+        Every day with you feels softer, warmer, and happier.  
+        Thank you for being my safe place, my peace, and my favorite person.  
+        I may not always say it perfectly, but I love you more than words can explain. ❤️
+    </div>
+
+    <button onclick="showLetter()">Open My Heart 💌</button>
+
+    <div class="letter" id="letter">
+        My love,  
+        <br><br>
+        It’s crazy how 10 months passed so fast, yet every moment with you still feels special and unforgettable.
+        You made ordinary days feel magical just by being there.
+        <br><br>
+        I still get excited talking to you, thinking about you, and loving you.
+        You’re honestly one of the best things that ever happened to me.
+        <br><br>
+        No matter what happens, I’ll always choose you.
+        Happy 10th monthsary, baby. ❤️
+        <br><br>
+        — dwight ramos 🌹
+    </div>
+
+</div>
+
+<script>
+function showLetter(){
+    document.getElementById("letter").style.display="block";
+}
+</script>
+
+</body>
+</html>
