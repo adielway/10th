@@ -25,17 +25,76 @@ body{
     min-height:100vh;
     overflow-x:hidden;
     overflow-y:auto;
-    background:
-    linear-gradient(
-        135deg,
-        #ffd1dc,
-        #ffe4ec,
-        #fff5f7
-    );
     position:relative;
+    background:#fff5f7;
+}
+
+/* Background Images */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.80),
+            rgba(255,255,255,0.80)
+        ),
+        url('pic3.jpg'),
+        url('pic8.jpg'),
+        url('pic9.jpg');
+
+    background-size:
+        cover,
+        cover,
+        cover;
+
+    background-position:
+        center,
+        top left,
+        bottom right;
+
+    background-repeat:no-repeat;
+
+    opacity:0.20;
+
+    z-index:-3;
+
+    animation:bgMove 20s ease-in-out infinite alternate;
+}
+
+/* Smooth background movement */
+
+@keyframes bgMove{
+    0%{
+        transform:scale(1);
+    }
+    100%{
+        transform:scale(1.05);
+    }
+}
+
+/* Optional dark overlay for readability */
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:linear-gradient(
+        135deg,
+        rgba(255,209,220,0.85),
+        rgba(255,228,236,0.85),
+        rgba(255,245,247,0.90)
+    );
+    z-index:-2;
 }
 
 /* Animated Background Blur */
+
 .bg-blur{
     position:fixed;
     width:500px;
@@ -120,6 +179,7 @@ body{
     max-width:430px;
     background:rgba(255,255,255,0.18);
     backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
     border:1px solid rgba(255,255,255,0.3);
     border-radius:30px;
     padding:35px 28px;
@@ -230,7 +290,18 @@ button:hover{
     height:40px;
 }
 
-/* Mobile */
+/* Mobile Optimization */
+
+@media(max-width:768px){
+
+    body::before{
+        background-position:
+            center,
+            center top,
+            center bottom;
+    }
+
+}
 
 @media(max-width:480px){
 
