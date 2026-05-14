@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy 10th Monthsary ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+    background:
+    linear-gradient(
+        135deg,
+        #ffd1dc,
+        #ffe4ec,
+        #fff5f7
+    );
+    position:relative;
+}
+
+/* Animated Background Blur */
+.bg-blur{
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:rgba(255,255,255,0.25);
+    border-radius:50%;
+    filter:blur(100px);
+    animation:moveBlob 15s infinite alternate ease-in-out;
+    z-index:0;
+}
+
+.bg-blur:nth-child(1){
+    top:-100px;
+    left:-100px;
+}
+
+.bg-blur:nth-child(2){
+    bottom:-100px;
+    right:-100px;
+    animation-delay:3s;
+}
+
+@keyframes moveBlob{
+    from{
+        transform:translate(0,0) scale(1);
+    }
+    to{
+        transform:translate(50px,50px) scale(1.2);
+    }
+}
+
+/* Floating Hearts */
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:1;
+}
+
+.heart{
+    position:absolute;
+    color:rgba(255,255,255,0.7);
+    animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(100vh) scale(0);
+        opacity:0;
+    }
+    10%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-120vh) scale(1.3);
+        opacity:0;
+    }
+}
+
+/* Main Container */
+
+.container{
+    position:relative;
+    z-index:2;
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+/* Card */
+
+.card{
+    width:100%;
+    max-width:430px;
+    background:rgba(255,255,255,0.18);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.3);
+    border-radius:30px;
+    padding:35px 28px;
+    text-align:center;
+    box-shadow:0 10px 40px rgba(0,0,0,0.12);
+
+    opacity:0;
+    transform:translateY(40px);
+    animation:smoothAppear 1.4s ease forwards;
+}
+
+@keyframes smoothAppear{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Title */
+
+.title{
+    font-size:2rem;
+    font-weight:600;
+    color:#ff4f7b;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#6b4b57;
+    font-size:0.95rem;
+    margin-bottom:25px;
+}
+
+/* GIF */
+
+.gif-box img{
+    width:100%;
+    border-radius:22px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    margin-bottom:25px;
+    transition:0.4s ease;
+}
+
+.gif-box img:hover{
+    transform:scale(1.02);
+}
+
+/* Message */
+
+.message{
+    font-size:1rem;
+    line-height:1.9;
+    color:#4d3b44;
+    margin-bottom:28px;
+}
+
+/* Button */
+
+button{
+    border:none;
+    outline:none;
+    padding:14px 30px;
+    border-radius:40px;
+    background:linear-gradient(135deg,#ff5d8f,#ff7ea6);
+    color:white;
+    font-size:1rem;
+    font-weight:500;
+    cursor:pointer;
+    transition:0.35s ease;
+    box-shadow:0 8px 20px rgba(255,93,143,0.35);
+}
+
+button:hover{
+    transform:translateY(-3px) scale(1.03);
+}
+
+/* Hidden Letter */
+
+.letter{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:
+        max-height 1s ease,
+        opacity 1s ease,
+        margin-top 0.6s ease;
+}
+
+.letter.show{
+    max-height:600px;
+    opacity:1;
+    margin-top:25px;
+}
+
+.letter-content{
+    background:rgba(255,255,255,0.35);
+    padding:22px;
+    border-radius:20px;
+    line-height:1.9;
+    color:#523d46;
+    font-size:0.96rem;
+    text-align:left;
+}
+
+/* Bottom spacing */
+
+.spacer{
+    height:40px;
+}
+
+/* Mobile */
+
+@media(max-width:480px){
+
+    .title{
+        font-size:1.7rem;
+    }
+
+    .card{
+        padding:30px 22px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Background Blur -->
+<div class="bg-blur"></div>
+<div class="bg-blur"></div>
+
+<!-- Hearts -->
+<div class="hearts" id="hearts"></div>
+
+<!-- Main -->
+<div class="container">
+
+    <div class="card">
+
+        <div class="title">
+            Happy 10th Monthsary ❤️
+        </div>
+
+        <div class="subtitle">
+            Every moment with you feels like my favorite memory.
+        </div>
+
+        <div class="gif-box">
+            <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+        </div>
+
+        <div class="message">
+            Thank you for loving me, staying with me, and making my life feel softer and happier.
+            These 10 months with you became one of the most beautiful chapters of my life.
+            <br><br>
+            You’re my comfort, my peace, and my favorite person. ❤️
+        </div>
+
+        <button onclick="openLetter()">
+            Open My Heart 💌
+        </button>
+
+        <div class="letter" id="letter">
+
+            <div class="letter-content">
+
+                My Love,
+                <br><br>
+
+                It still amazes me how someone like you can make everything feel so warm and meaningful.
+                These past 10 months were filled with moments I’ll forever treasure.
+                <br><br>
+
+                Thank you for every laugh, every late-night talk, every reassurance, and every little thing you do.
+                Loving you became one of the easiest and best things I’ve ever done.
+                <br><br>
+
+                No matter how many months pass, I’ll still choose you over and over again.
+                <br><br>
+
+                Happy 10th Monthsary, baby. ❤️
+                <br><br>
+
+                — Your Love 🌹
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="spacer"></div>
+
+<script>
+
+/* Floating Hearts */
+
+const heartsContainer = document.getElementById('hearts');
+
+for(let i=0;i<35;i++){
+
+    const heart = document.createElement('div');
+
+    heart.classList.add('heart');
+
+    heart.innerHTML = '❤';
+
+    heart.style.left = Math.random()*100 + 'vw';
+
+    heart.style.fontSize = (Math.random()*18 + 12) + 'px';
+
+    heart.style.animationDuration = (Math.random()*6 + 6) + 's';
+
+    heart.style.animationDelay = Math.random()*5 + 's';
+
+    heartsContainer.appendChild(heart);
+
+}
+
+/* Open Letter */
+
+function openLetter(){
+
+    document.getElementById('letter').classList.toggle('show');
+
+    setTimeout(() => {
+
+        document.getElementById('letter').scrollIntoView({
+            behavior:'smooth',
+            block:'center'
+        });
+
+    },300);
+
+}
+
+</script>
+
+</body>
+</html>
